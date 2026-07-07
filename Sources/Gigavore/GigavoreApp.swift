@@ -1,12 +1,12 @@
 import SwiftUI
 
 @main
-struct SpaceLensApp: App {
+struct GigavoreApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @State private var model = AppModel()
 
     var body: some Scene {
-        WindowGroup("Space Lens") {
+        WindowGroup("Gigavore") {
             ContentView()
                 .environment(model)
                 .frame(minWidth: 900, minHeight: 560)

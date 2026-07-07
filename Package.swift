@@ -2,14 +2,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "SpaceLens",
+    name: "Gigavore",
     platforms: [
         .macOS(.v15)
     ],
     targets: [
         .executableTarget(
-            name: "SpaceLens",
-            path: "Sources/SpaceLens"
+            name: "Gigavore",
+            path: "Sources/Gigavore"
         )
     ]
 )

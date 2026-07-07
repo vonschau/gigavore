@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
     <key>CFBundleName</key>
-    <string>Space Lens</string>
+    <string>Gigavore</string>
     <key>CFBundleDisplayName</key>
-    <string>Space Lens</string>
+    <string>Gigavore</string>
     <key>CFBundleIdentifier</key>
-    <string>agency.symbio.spacelens</string>
+    <string>agency.symbio.gigavore</string>
     <key>CFBundleVersion</key>
     <string>1</string>
     <key>CFBundleShortVersionString</key>
     <string>1.0</string>
     <key>CFBundleExecutable</key>
-    <string>SpaceLens</string>
+    <string>Gigavore</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleIconFile</key>

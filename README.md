@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="docs/icon.png" width="160" alt="Space Lens icon">
+  <img src="docs/icon.png" width="160" alt="Gigavore icon">
 </p>
 
-<h1 align="center">Space Lens</h1>
+<h1 align="center">Gigavore</h1>
 
 <p align="center">
-  A native macOS app that shows you what is eating your disk space —
-  inspired by the Space Lens feature of CleanMyMac X.
+  A native macOS app that shows you what is eating your gigabytes —
+  scan a folder or the whole disk and explore the usage as an interactive treemap.
 </p>
 
 ## Features
@@ -37,24 +37,24 @@ swift run
 
 # Build a proper .app bundle
 ./build-app.sh
-open build/SpaceLens.app
+open build/Gigavore.app
 ```
 
 ## Permissions
 
 - macOS will ask for access the first time you scan Desktop, Documents, or Downloads.
 - Scanning the entire disk (`/`) requires **Full Disk Access**:
-  System Settings → Privacy & Security → Full Disk Access → add Space Lens
+  System Settings → Privacy & Security → Full Disk Access → add Gigavore
   (or your terminal if you run it via `swift run`).
 
 ## Project layout
 
 | Path | Purpose |
 | --- | --- |
-| `Sources/SpaceLens/Scanner/DiskScanner.swift` | Recursive scanner using allocated sizes (`totalFileAllocatedSize`) |
-| `Sources/SpaceLens/Treemap/Squarify.swift` | Squarified treemap layout algorithm |
-| `Sources/SpaceLens/AppModel.swift` | App state, navigation, file actions (Trash, Finder) |
-| `Sources/SpaceLens/Views/` | Welcome / scanning progress / results (treemap + list) |
+| `Sources/Gigavore/Scanner/DiskScanner.swift` | Recursive scanner using allocated sizes (`totalFileAllocatedSize`) |
+| `Sources/Gigavore/Treemap/Squarify.swift` | Squarified treemap layout algorithm |
+| `Sources/Gigavore/AppModel.swift` | App state, navigation, file actions (Trash, Finder) |
+| `Sources/Gigavore/Views/` | Welcome / scanning progress / results (treemap + list) |
 | `scripts/generate-icon.swift` | Renders the app icon (treemap under a magnifying lens) |
 
 ## Regenerating the icon

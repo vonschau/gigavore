@@ -14,9 +14,9 @@ struct WelcomeView: View {
                     .foregroundStyle(.linearGradient(
                         colors: [.orange, .pink],
                         startPoint: .topLeading, endPoint: .bottomTrailing))
-                Text("Space Lens")
+                Text("Gigavore")
                     .font(.largeTitle.bold())
-                Text("Find out what is eating your disk space")
+                Text("Find out what is eating your gigabytes")
                     .foregroundStyle(.secondary)
             }
 
