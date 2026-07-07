@@ -1,7 +1,12 @@
 #!/bin/bash
 # Builds Gigavore.app into the build/ directory.
-# By default builds a universal binary (arm64 + x86_64); pass --native to
-# build only for the current architecture (faster for development).
+#
+# Usage:
+#   ./build-app.sh                  universal build, ad-hoc signature
+#   ./build-app.sh --native         current-arch build (faster for development)
+#   SIGN_IDENTITY="Developer ID Application: ..." ./build-app.sh
+#                                   universal build signed with hardened runtime
+#                                   (required for notarization)
 set -euo pipefail
 cd "$(dirname "$0")"
 
@@ -20,8 +25,13 @@ cp "$BINARY" "$APP/Contents/MacOS/Gigavore"
 cp Resources/Info.plist "$APP/Contents/Info.plist"
 cp Resources/AppIcon.icns "$APP/Contents/Resources/AppIcon.icns"
 
-# Ad-hoc signature (sufficient for running locally).
-codesign --force --sign - "$APP"
+if [[ -n "${SIGN_IDENTITY:-}" ]]; then
+    codesign --force --sign "$SIGN_IDENTITY" --options runtime --timestamp "$APP"
+    echo "Signed with: $SIGN_IDENTITY"
+else
+    # Ad-hoc signature (sufficient for running locally).
+    codesign --force --sign - "$APP"
+fi
 
 echo "Done: $APP"
 lipo -archs "$APP/Contents/MacOS/Gigavore" 2>/dev/null || true
